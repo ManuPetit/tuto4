@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h2>Symfony 3 Form Example</h2>
+
+    <hr />
+    {{ form_start(myForm) }}
+    {{ form_widget(myForm) }}
+    {{ form_end(myForm) }}
+{% endblock %}
