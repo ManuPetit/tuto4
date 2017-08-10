@@ -22,16 +22,31 @@ class Product
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
-     * @Assert\Length(min="10", minMessage="this value was too short")
+     * @ORM\Column(name="`integer`", type="integer")
      */
-    protected $title;
+    protected $integer;
 
     /**
-     * @ORM\Column(type="string")
-     * @Assert\Email()
+     * @ORM\Column(type="decimal", scale=3)
      */
-    protected $email;
+    protected $number;
+
+    /**
+     * @ORM\Column(type="decimal", scale=3)
+     */
+    protected $floater;
+
+//    /**
+//     * @ORM\Column(type="string")
+//     * @Assert\Length(min="10", minMessage="this value was too short")
+//     */
+//    protected $title;
+//
+//    /**
+//     * @ORM\Column(type="string")
+//     * @Assert\Email()
+//     */
+//    protected $email;
 
 //    /**
 //     * @ORM\Column(type="datetime")
@@ -54,70 +69,121 @@ class Product
     /**
      * @return mixed
      */
-    public function getTitle()
+    public function getInteger()
     {
-        return $this->title;
+        return $this->integer;
     }
 
     /**
-     * @param mixed $title
+     * @param mixed $integer
      */
-    public function setTitle($title)
+    public function setInteger($integer)
     {
-        $this->title = $title;
+        $this->integer = $integer;
         return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getAvailableFrom()
+    public function getNumber()
     {
-        return $this->availableFrom;
+        return $this->number;
     }
 
     /**
-     * @param mixed $availableFrom
+     * @param mixed $number
      */
-    public function setAvailableFrom($availableFrom)
+    public function setNumber($number)
     {
-        $this->availableFrom = $availableFrom;
+        $this->number = $number;
         return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getDescription()
+    public function getFloater()
     {
-        return $this->description;
+        return $this->floater;
     }
 
     /**
-     * @param mixed $description
+     * @param mixed $float
      */
-    public function setDescription($description)
+    public function setFloater($floater)
     {
-        $this->description = $description;
+        $this->floater = $floater;
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-        return $this;
-    }
-
+//    /**
+//     * @return mixed
+//     */
+//    public function getTitle()
+//    {
+//        return $this->title;
+//    }
+//
+//    /**
+//     * @param mixed $title
+//     */
+//    public function setTitle($title)
+//    {
+//        $this->title = $title;
+//        return $this;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getAvailableFrom()
+//    {
+//        return $this->availableFrom;
+//    }
+//
+//    /**
+//     * @param mixed $availableFrom
+//     */
+//    public function setAvailableFrom($availableFrom)
+//    {
+//        $this->availableFrom = $availableFrom;
+//        return $this;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getDescription()
+//    {
+//        return $this->description;
+//    }
+//
+//    /**
+//     * @param mixed $description
+//     */
+//    public function setDescription($description)
+//    {
+//        $this->description = $description;
+//        return $this;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getEmail()
+//    {
+//        return $this->email;
+//    }
+//
+//    /**
+//     * @param mixed $email
+//     */
+//    public function setEmail($email)
+//    {
+//        $this->email = $email;
+//        return $this;
+//    }
+//
 
 }

@@ -41,20 +41,17 @@ class FormExampleController extends Controller
     }
 
     /**
-     * @Route("/edit/{productId}", name="form_edit_example")
+     * @Route("/edit/{product}", name="form_edit_example")
      */
-    public function formEditExampleAction(Request $request, $productId)
+    public function formEditExampleAction(Request $request, Product $product)
     {
-
-        $em = $this->getDoctrine()->getManager();
-        $product = $em->getRepository('AppBundle:Product')->find($productId);
-
         $form = $this->createForm(ProductType::class, $product);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $em = $this->getDoctrine()->getManager();
             $em->flush();
 
             return $this->redirectToRoute('form_add_example');
