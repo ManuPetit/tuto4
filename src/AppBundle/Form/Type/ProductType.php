@@ -3,6 +3,7 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -18,6 +19,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProductType extends AbstractType
 {
+    const AWING = 'awing';
+    const BWING = 'bwing';
+    const XWING = 'xwing';
+    const YWING = 'ywing';
+    const ZWING = 'zwing';
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 //        $builder
@@ -34,9 +41,20 @@ class ProductType extends AbstractType
 //            ->add('Save', SubmitType::class);
 
         $builder
-            ->add('ladate', DateTimeType::class, [
-                'input' => 'datetime',
-                'widget' => 'single_text'
+            ->add('choice', ChoiceType::class, [
+                'choices' => [
+                    'A-Wing' => self::AWING,
+                    'B-Wing' => self::BWING,
+                    'X-Wing' => self::XWING,
+                    'Y-Wing' => self::YWING,
+                    'Z-Wing' => self::ZWING
+                ],
+                'label' => 'Optimal way to kill a tie-fighter ?',
+                'preferred_choices' => function($choice, $key){
+                    return substr($choice, 0,1) > "m";
+                },
+                'expanded' => true,
+                'multiple' => true
             ])
             ->add('save', SubmitType::class);
     }

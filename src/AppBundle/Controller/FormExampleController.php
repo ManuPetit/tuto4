@@ -22,7 +22,10 @@ class FormExampleController extends Controller
      */
     public function formAddExampleAction(Request $request)
     {
-        $form = $this->createForm(ProductType::class);
+        $product = new Product();
+        //$product->setChoice(ProductType::YWING);
+
+        $form = $this->createForm(ProductType::class, $product);
 
         $form->handleRequest($request);
 

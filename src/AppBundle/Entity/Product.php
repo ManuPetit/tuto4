@@ -22,26 +22,50 @@ class Product
     protected $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
-    protected $ladate;
+    protected $choice;
 
     /**
      * @return mixed
      */
-    public function getLadate()
+    public function getChoice()
     {
-        return $this->ladate;
+        return $this->choice;
     }
 
     /**
-     * @param mixed $ladate
+     * @param mixed $choice
      */
-    public function setLadate($ladate)
+    public function setChoice($choice)
     {
-        $this->ladate = $ladate;
+        $this->choice = $choice;
         return $this;
     }
+
+
+
+//    /**
+//     * @ORM\Column(type="datetime")
+//     */
+//    protected $ladate;
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getLadate()
+//    {
+//        return $this->ladate;
+//    }
+//
+//    /**
+//     * @param mixed $ladate
+//     */
+//    public function setLadate($ladate)
+//    {
+//        $this->ladate = $ladate;
+//        return $this;
+//    }
 
 
 //    /**
