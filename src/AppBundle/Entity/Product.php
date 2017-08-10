@@ -22,41 +22,69 @@ class Product
     protected $id;
 
     /**
-     * @ORM\Column(name="`integer`", type="integer")
+     * @ORM\Column(type="datetime")
      */
-    protected $integer;
+    protected $ladate;
 
     /**
-     * @ORM\Column(type="decimal", scale=3)
+     * @return mixed
      */
-    protected $number;
+    public function getLadate()
+    {
+        return $this->ladate;
+    }
 
     /**
-     * @ORM\Column(type="decimal", scale=3)
+     * @param mixed $ladate
      */
-    protected $floater;
+    public function setLadate($ladate)
+    {
+        $this->ladate = $ladate;
+        return $this;
+    }
+
 
 //    /**
-//     * @ORM\Column(type="string")
-//     * @Assert\Length(min="10", minMessage="this value was too short")
+//     * @ORM\Column(name="`integer`", type="integer")
 //     */
-//    protected $title;
+//    protected $integer;
 //
 //    /**
-//     * @ORM\Column(type="string")
-//     * @Assert\Email()
+//     * @ORM\Column(type="decimal", scale=3)
 //     */
-//    protected $email;
-
+//    protected $number;
+//
 //    /**
-//     * @ORM\Column(type="datetime")
+//     * @ORM\Column(type="decimal", scale=3)
 //     */
-//    protected $availableFrom;
-
+//    protected $floater;
+//
 //    /**
-//     * @ORM\Column(type="text")
+//     * @ORM\Column(type="decimal", scale=2)
 //     */
-//    protected $description;
+//    protected $money;
+//
+////    /**
+////     * @ORM\Column(type="string")
+////     * @Assert\Length(min="10", minMessage="this value was too short")
+////     */
+////    protected $title;
+////
+////    /**
+////     * @ORM\Column(type="string")
+////     * @Assert\Email()
+////     */
+////    protected $email;
+//
+////    /**
+////     * @ORM\Column(type="datetime")
+////     */
+////    protected $availableFrom;
+//
+////    /**
+////     * @ORM\Column(type="text")
+////     */
+////    protected $description;
 
     /**
      * @return mixed
@@ -66,56 +94,74 @@ class Product
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getInteger()
-    {
-        return $this->integer;
-    }
+//    /**
+//     * @return mixed
+//     */
+//    public function getInteger()
+//    {
+//        return $this->integer;
+//    }
+//
+//    /**
+//     * @param mixed $integer
+//     */
+//    public function setInteger($integer)
+//    {
+//        $this->integer = $integer;
+//        return $this;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getNumber()
+//    {
+//        return $this->number;
+//    }
+//
+//    /**
+//     * @param mixed $number
+//     */
+//    public function setNumber($number)
+//    {
+//        $this->number = $number;
+//        return $this;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getFloater()
+//    {
+//        return $this->floater;
+//    }
+//
+//    /**
+//     * @param mixed $float
+//     */
+//    public function setFloater($floater)
+//    {
+//        $this->floater = $floater;
+//        return $this;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getMoney()
+//    {
+//        return $this->money;
+//    }
+//
+//    /**
+//     * @param mixed $money
+//     */
+//    public function setMoney($money)
+//    {
+//        $this->money = $money;
+//        return $this;
+//    }
 
-    /**
-     * @param mixed $integer
-     */
-    public function setInteger($integer)
-    {
-        $this->integer = $integer;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
-     * @param mixed $number
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFloater()
-    {
-        return $this->floater;
-    }
-
-    /**
-     * @param mixed $float
-     */
-    public function setFloater($floater)
-    {
-        $this->floater = $floater;
-        return $this;
-    }
 
 //    /**
 //     * @return mixed
